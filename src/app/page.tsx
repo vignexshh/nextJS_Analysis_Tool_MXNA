@@ -1,8 +1,14 @@
 'use client';
 
 import Link from "next/link"
+import * as React from "react"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
+ 
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
+import { ThemeProvider } from "@/components/theme-provider";
+import { ModeToggle } from "@/components/mode-toggle";
 import {
   Card,
   CardContent,
@@ -12,10 +18,21 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
 
 export default function LoginForm() {
   return (
-    <div className="flex justify-center items-center bg-background w-full h-screen  ">
+        
+    <div className=" flex justify-center items-center bg-background w-full h-screen  ">
+      <div className="absolute top-0 right-0 p-5">
+      <ModeToggle />
+      </div>
       <div className="w-96 m-5" > 
       <Card>  
         <CardHeader>
@@ -34,9 +51,10 @@ export default function LoginForm() {
           </CardHeader> </Card> 
           </div>
 
-  
-</div>
 
   
+    </div>
+ 
+
   )
 }
